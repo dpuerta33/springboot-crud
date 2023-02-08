@@ -1,9 +1,7 @@
-package com.bootcamp.demoSpringBoot;
+package com.bootcamp.demoSpringBoot.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Date;
 
 @RestController
 public class UserController {
@@ -19,20 +17,23 @@ public class UserController {
 
     // Borrar usuario.
     @DeleteMapping("/api/v1/users/{id}")
-    public void deleteUser (@PathVariable(name = "id") Integer id){
+    public Users deleteUser (@PathVariable(name = "id") Integer id){
         userService.deleteUser(id);
+        return userService.showAll();
     }
 
     // Crear usuario.
     @PostMapping("/api/v1/users")
-    public void createUser (@RequestBody User user) {
+    public Users createUser (@RequestBody User user) {
         userService.createUser(user);
+        return userService.showAll();
     }
 
     // Modificar usuario.
     @PutMapping("/api/v1/users")
-    public void alterUser (@RequestBody User user) {
+    public Users alterUser (@RequestBody User user) {
         userService.alterUser(user);
+        return userService.showAll();
     }
 
 }

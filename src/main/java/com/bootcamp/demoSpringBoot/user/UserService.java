@@ -1,9 +1,9 @@
-package com.bootcamp.demoSpringBoot;
+package com.bootcamp.demoSpringBoot.user;
 
+import com.bootcamp.demoSpringBoot.user.User;
+import com.bootcamp.demoSpringBoot.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
 
 @Service
 public class UserService {
@@ -29,6 +29,13 @@ public class UserService {
     // Modificar usuario.
     public void alterUser(User user) {
         userRep.save(user);
+    }
+
+    // Mostrar todos los usuarios.
+    public Users showAll() {
+        Users users = new Users();
+        users.getUserList().addAll(this.userRep.findAll());
+        return users;
     }
 
 }

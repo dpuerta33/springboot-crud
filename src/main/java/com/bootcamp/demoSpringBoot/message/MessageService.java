@@ -1,4 +1,4 @@
-package com.bootcamp.demoSpringBoot;
+package com.bootcamp.demoSpringBoot.message;
 
 public interface MessageService {
 
