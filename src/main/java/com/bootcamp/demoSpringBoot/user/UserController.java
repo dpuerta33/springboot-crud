@@ -19,21 +19,21 @@ public class UserController {
     @DeleteMapping("/api/v1/users/{id}")
     public Users deleteUser (@PathVariable(name = "id") Integer id){
         userService.deleteUser(id);
-        return userService.showAll();
+        return userService.showAll(); // Retorna una lista con todos los usuarios para comprobar que se han realizado los cambios.
     }
 
     // Crear usuario.
     @PostMapping("/api/v1/users")
     public Users createUser (@RequestBody User user) {
         userService.createUser(user);
-        return userService.showAll();
+        return userService.showAll(); // Retorna una lista con todos los usuarios para comprobar que se han realizado los cambios.
     }
 
     // Modificar usuario.
     @PutMapping("/api/v1/users")
     public Users alterUser (@RequestBody User user) {
         userService.alterUser(user);
-        return userService.showAll();
+        return userService.showAll(); // Retorna una lista con todos los usuarios para comprobar que se han realizado los cambios.
     }
 
 }
