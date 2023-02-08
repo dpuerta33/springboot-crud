@@ -1,7 +1,7 @@
 package com.bootcamp.demoSpringBoot.user;
 
+import io.swagger.annotations.ApiModelProperty;
 import jakarta.persistence.*;
-import org.springframework.lang.NonNull;
 import org.wildfly.common.annotation.NotNull;
 
 import java.io.Serializable;
@@ -13,14 +13,17 @@ public class User implements Serializable {
     @Id
     @Column
     @NotNull
+    @ApiModelProperty(position = 0)
     private Integer id;
 
     @Column
     @NotNull
+    @ApiModelProperty(position = 1)
     private String name;
 
     @Column
     @NotNull
+    @ApiModelProperty(position = 3)
     private Date birthDate;
 
     public User() { }
