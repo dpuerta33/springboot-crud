@@ -5,6 +5,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 
@@ -25,6 +26,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     // Añadir usuario.
     // INSERT INTO users (id, name, birth_date) VALUES (5, 'Lucas', '1970-08-05');
     @Cacheable("usuarios")
+    @Validated
     User save(User user);
 
 

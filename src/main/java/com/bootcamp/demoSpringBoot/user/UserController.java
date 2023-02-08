@@ -1,6 +1,7 @@
 package com.bootcamp.demoSpringBoot.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -8,6 +9,8 @@ public class UserController {
 
     @Autowired
     UserService userService;
+    @Autowired
+    private UserRepository userRepository;
 
     // Obtener usuario.
     @GetMapping("/api/v1/users/{id}")
@@ -23,6 +26,7 @@ public class UserController {
     }
 
     // Crear usuario.
+
     @PostMapping("/api/v1/users")
     public Users createUser (@RequestBody User user) {
         userService.createUser(user);

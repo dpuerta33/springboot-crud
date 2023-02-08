@@ -1,6 +1,8 @@
 package com.bootcamp.demoSpringBoot.user;
 
 import jakarta.persistence.*;
+import org.springframework.lang.NonNull;
+import org.wildfly.common.annotation.NotNull;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -10,12 +12,15 @@ import java.util.Date;
 public class User implements Serializable {
     @Id
     @Column
+    @NotNull
     private Integer id;
 
     @Column
+    @NotNull
     private String name;
 
     @Column
+    @NotNull
     private Date birthDate;
 
     public User() { }
