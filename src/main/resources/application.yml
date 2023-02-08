@@ -1,0 +1,21 @@
+server:
+  port: 8090
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+course:
+  message: Hello world! Este es un mensaje predefinido en YAML
+spring:
+  profiles:
+    active: dev
+  h2:
+    console.enabled: true
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
